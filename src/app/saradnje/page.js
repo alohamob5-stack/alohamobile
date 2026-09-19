@@ -3,12 +3,7 @@
 import { useRouter } from 'next/navigation';
 import { ArrowLeft, Palmtree } from 'lucide-react';
 
-const partners = [
-  {
-    name: 'Foneng',
-    description: 'Zvanični uvoznik Foneng proizvoda za Srbiju — punjači, kablovi, držači, slušalice i zvučnici. Kao ekskluzivni distributer, garantujemo originalnost i najbolje cene na tržištu.',
-  },
-];
+const partners = [];
 
 export default function SaradnjePage() {
   const router = useRouter();
@@ -34,7 +29,11 @@ export default function SaradnjePage() {
         </p>
 
         <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-          {partners.map(p => (
+          {partners.length === 0 ? (
+            <div style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 'var(--radius)', padding: '1.5rem', boxShadow: 'var(--shadow)', textAlign: 'center', color: 'var(--muted)', fontSize: '0.9rem' }}>
+              Uskoro više informacija o našim saradnjama.
+            </div>
+          ) : partners.map(p => (
             <div key={p.name} style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 'var(--radius)', padding: '1.5rem', boxShadow: 'var(--shadow)' }}>
               <h2 style={{ fontSize: '1.15rem', fontWeight: '800', color: 'var(--red)', margin: '0 0 0.5rem' }}>{p.name}</h2>
               <p style={{ fontSize: '0.9rem', color: 'var(--text)', lineHeight: 1.6, margin: 0 }}>{p.description}</p>
