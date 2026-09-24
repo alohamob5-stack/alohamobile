@@ -432,10 +432,10 @@ function HorizontalScroll({ prods, onAdd, router }) {
       {prods.map(p => (
         <div key={p.id} style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 'var(--radius)', overflow: 'hidden', boxShadow: 'var(--shadow)', display: 'flex', flexDirection: 'column', minWidth: '205px', maxWidth: '205px', flexShrink: 0, transition: 'box-shadow 0.2s, transform 0.2s' }}>
           <div onClick={() => router.push(`/proizvod/${makeSlug(p.name, p.id)}`)} style={{ padding: '0.9rem', cursor: 'pointer', flex: 1 }}>
-            <div style={{ position: 'relative', background: 'var(--bg3)', borderRadius: 'var(--radius-sm)', aspectRatio: '1 / 1', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden' }}>
+            <div style={{ position: 'relative' }}>
               {p.image_url
-                ? <img src={p.image_url} alt={p.name} style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block', padding: '0.4rem' }} />
-                : <ImageOff size={32} color="var(--faint)" />}
+                ? <img src={p.image_url} alt={p.name} style={{ width: '100%', height: '150px', objectFit: 'contain', display: 'block' }} />
+                : <div style={{ height: '150px', background: 'var(--bg3)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}><ImageOff size={32} color="var(--faint)" /></div>}
               {p.categories?.slug === 'maske' && (
                 <span style={{ position: 'absolute', top: '8px', left: '8px', background: 'rgba(15,30,61,0.85)', color: '#fff', fontSize: '0.6rem', fontWeight: '600', padding: '0.15rem 0.4rem', borderRadius: 'var(--pill)', lineHeight: 1.3 }}>Ilustrativna slika</span>
               )}
