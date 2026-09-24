@@ -434,7 +434,7 @@ function HorizontalScroll({ prods, onAdd, router }) {
           <div onClick={() => router.push(`/proizvod/${makeSlug(p.name, p.id)}`)} style={{ padding: '0.9rem', cursor: 'pointer', flex: 1 }}>
             <div style={{ position: 'relative', background: 'var(--bg3)', borderRadius: 'var(--radius-sm)', aspectRatio: '1 / 1', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden' }}>
               {p.image_url
-                ? <img src={p.image_url} alt={p.name} style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block', transform: 'scale(1.22)', transformOrigin: 'center' }} />
+                ? <img src={p.image_url} alt={p.name} style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block', padding: '0.4rem' }} />
                 : <ImageOff size={32} color="var(--faint)" />}
               {p.categories?.slug === 'maske' && (
                 <span style={{ position: 'absolute', top: '8px', left: '8px', background: 'rgba(15,30,61,0.85)', color: '#fff', fontSize: '0.6rem', fontWeight: '600', padding: '0.15rem 0.4rem', borderRadius: 'var(--pill)', lineHeight: 1.3 }}>Ilustrativna slika</span>
